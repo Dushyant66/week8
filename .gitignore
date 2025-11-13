@@ -6,7 +6,7 @@ __pycache__/
 .env
 
 # Ignore MLflow experiment runs
-mlruns/
+# mlruns/
 
 # Ignore all output files by default
 outputs/*
