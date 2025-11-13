@@ -31,4 +31,9 @@ jobs:
             --port 8100 &
       - name: Run script
         run: python train_poison_experiment.py
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: iris_experiment_outputs
+          path: outputs/
 
