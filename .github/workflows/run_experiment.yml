@@ -42,7 +42,6 @@ jobs:
           name: iris_outputs
           path: |
             outputs/
-            mlruns/
 
       # 6️⃣ Commit outputs to repo (optional)
       - name: Commit outputs to repo
