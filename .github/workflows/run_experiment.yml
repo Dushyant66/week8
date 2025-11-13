@@ -22,21 +22,17 @@ jobs:
         with:
           python-version: '3.10'
 
-      # 3️⃣ Create and activate venv + install dependencies
+      # 3️⃣ Install dependencies (no venv needed)
       - name: Install dependencies
         run: |
-          python -m venv venv
-          source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
 
       # 4️⃣ Run your training script
       - name: Run Iris Poisoning Experiment
-        run: |
-          source venv/bin/activate
-          python train_poison_experiment.py
+        run: python train_poison_experiment.py
 
-      # 5️⃣ Upload results as artifacts (so they’re visible in GitHub Actions UI)
+      # 5️⃣ Upload results as artifacts
       - name: Upload Outputs
         uses: actions/upload-artifact@v4
         with:
