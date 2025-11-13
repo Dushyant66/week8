@@ -8,9 +8,6 @@ __pycache__/
 # Ignore MLflow experiment runs
 mlruns/
 
-# Ignore data and large generated files
-data/
-
 # Ignore all output files by default
 outputs/*
 
