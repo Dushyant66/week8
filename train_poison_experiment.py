@@ -42,8 +42,8 @@ def poison_data(X, level=0.05):
     return X_poisoned
 
 # === EXPERIMENT SETUP ===
-# mlflow.set_tracking_uri("http://127.0.0.1:8100")
-mlflow.set_tracking_uri("file://" + os.path.abspath("mlruns"))
+mlflow.set_tracking_uri("http://127.0.0.1:8100")
+# mlflow.set_tracking_uri("file://" + os.path.abspath("mlruns"))
 mlflow.set_experiment("IRIS Data Poison Experimentsss...")
 client = MlflowClient(mlflow.get_tracking_uri())
 
