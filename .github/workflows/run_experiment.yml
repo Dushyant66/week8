@@ -42,8 +42,8 @@ jobs:
             mlruns/
        - name: Commit outputs to repo
          run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name "Dushyant66"
+          git config --global user.email "21f3000931@ds.study.iitm.ac.in"
           git add outputs/
           git commit -m "Add experiment outputs"
           git push
