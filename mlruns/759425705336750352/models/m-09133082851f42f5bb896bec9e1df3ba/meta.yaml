@@ -1,0 +1,10 @@
+artifact_location: file:///home/runner/work/week8/week8/mlruns/759425705336750352/models/m-09133082851f42f5bb896bec9e1df3ba/artifacts
+creation_timestamp: 1763054720499
+experiment_id: '759425705336750352'
+last_updated_timestamp: 1763054722309
+model_id: m-09133082851f42f5bb896bec9e1df3ba
+model_type: null
+name: IRIS-classifier-dt-10
+source_run_id: 7c2fafcf95db468f8ea7908028a48f6c
+status: 2
+status_message: null

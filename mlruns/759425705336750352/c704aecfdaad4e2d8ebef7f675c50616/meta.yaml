@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/week8/week8/mlruns/759425705336750352/c704aecfdaad4e2d8ebef7f675c50616/artifacts
+end_time: 1763054724340
+entry_point_name: ''
+experiment_id: '759425705336750352'
+lifecycle_stage: active
+run_id: c704aecfdaad4e2d8ebef7f675c50616
+run_name: wistful-cub-814
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763054724333
+status: 3
+tags: []
+user_id: runner

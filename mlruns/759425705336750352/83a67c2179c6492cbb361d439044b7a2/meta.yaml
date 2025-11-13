@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/week8/week8/mlruns/759425705336750352/83a67c2179c6492cbb361d439044b7a2/artifacts
+end_time: 1763054718626
+entry_point_name: ''
+experiment_id: '759425705336750352'
+lifecycle_stage: active
+run_id: 83a67c2179c6492cbb361d439044b7a2
+run_name: Poison_0%
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763054716306
+status: 3
+tags: []
+user_id: runner
