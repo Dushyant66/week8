@@ -40,8 +40,8 @@ jobs:
           path: |
             outputs/
             mlruns/
-       - name: Commit outputs to repo
-         run: |
+      - name: Commit outputs to repo
+        run: |
           git config --global user.name "Dushyant66"
           git config --global user.email "21f3000931@ds.study.iitm.ac.in"
           git add outputs/
