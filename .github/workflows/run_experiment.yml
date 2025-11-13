@@ -1,0 +1,44 @@
+# File: .github/workflows/run_experiment.yml
+name: IRIS Poisoning Experiment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # allows manual run from GitHub Actions tab
+
+jobs:
+  run-iris-experiment:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3️⃣ Create and activate venv + install dependencies
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4️⃣ Run your training script
+      - name: Run Iris Poisoning Experiment
+        run: |
+          source venv/bin/activate
+          python train_poison_experiment.py
+
+      # 5️⃣ Upload results as artifacts (so they’re visible in GitHub Actions UI)
+      - name: Upload Outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: iris_outputs
+          path: outputs/
