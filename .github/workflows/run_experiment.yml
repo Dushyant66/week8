@@ -5,35 +5,39 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # allows manual run from GitHub Actions tab
+  workflow_dispatch:
 
 jobs:
   run-poison-experiment:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      # 1️⃣ Checkout repository
+      - uses: actions/checkout@v4
+
+      # 2️⃣ Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install mlflow
-      - name: Start MLflow server
-        run: |
-          mkdir mlruns
-          nohup mlflow server \
-            --backend-store-uri sqlite:///mlflow.db \
-            --default-artifact-root ./mlruns \
-            --host 127.0.0.1 \
-            --port 8100 &
-      - name: Run script
+          pip install mlflow scikit-learn matplotlib pandas numpy
+
+      # 4️⃣ Run training script
+      - name: Run Iris Poisoning Experiment
         run: python train_poison_experiment.py
-      - name: Upload outputs
+
+      # 5️⃣ Upload outputs
+      - name: Upload experiment outputs
         uses: actions/upload-artifact@v4
         with:
-          name: iris_experiment_outputs
-          path: outputs/
+          name: iris_outputs
+          path: |
+            outputs/
+            mlruns/
 
